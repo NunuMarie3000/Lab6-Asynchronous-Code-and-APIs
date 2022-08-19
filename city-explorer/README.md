@@ -1,7 +1,7 @@
 # Lab6-Asynchronous-Code-and-APIs
 
 **Author**: Storm O'Bryant
-**Version**: 1.0.2
+**Version**: 1.0.3
 [View deployed application](https://cityexplorer-lab06.netlify.app/)
 
 ## Overview
