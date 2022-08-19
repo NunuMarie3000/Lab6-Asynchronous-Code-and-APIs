@@ -23,7 +23,7 @@ export default class Cards extends Component {
   }
   
   createMap = () => {
-    const API = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_EXPLORER}&center=${this.props.lat},${this.props.lon}&zoom=18&markers=icon:small-blue-cutout|${this.props.lat},${this.props.lon}`
+    const API = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_EXPLORER}&center=${this.props.lat},${this.props.lon}&zoom=16&size=480x480&markers=icon:small-blue-cutout|${this.props.lat},${this.props.lon}`
 
     this.setState({src: API})
   }

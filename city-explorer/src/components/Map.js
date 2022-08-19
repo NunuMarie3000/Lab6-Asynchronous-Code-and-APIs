@@ -5,7 +5,6 @@ import axios from 'axios'
 import { Form, Button } from 'react-bootstrap'
 
 import Cards from './Cards'
-// import Static from './Static'
 
 export default class Map extends Component {
   constructor(props) {
@@ -15,8 +14,10 @@ export default class Map extends Component {
       query: '',
       isChecked: false,
       location: '',
-    //i need a state here that handles the chosen card specific info. when the user clicks cards.js, i need a function in cards.js that sends the info back here and sets the state to that specific object
-    chosenCard: ''
+      //i need a state here that handles the chosen card specific info. when the user clicks cards.js, i need a function in cards.js that sends the info back here and sets the state to that specific object
+      chosenCard: '',
+      validated: false,
+      errors: []
     }
   }
 
@@ -27,27 +28,31 @@ export default class Map extends Component {
   getLocation = async (e) =>{
     e.preventDefault();
 
+    this.checkQuery();
+
     const API = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_CITY_EXPLORER}&q=${this.state.query}&format=json`
 
-    const response = await axios.get(API)
+    const response = await axios.get(API).catch((err)=>{alert(`${err}. Enter a valid location`)})
+
     this.setState({location: response.data})
   }
 
-  handleSwitch = () =>{
-    this.setState({isChecked: !this.state.isChecked})
+  checkQuery = () => {
+    this.state.query !== '' && this.setState({validated: true})
+
+
   }
 
   render() {
     return (
       <>
         <div className='mapjs-container'>
-            <Form style={{display: 'flex', flexDirection: 'column', padding: '2rem'}}>
+            <Form validated={this.state.validated} style={{display: 'flex', flexDirection: 'column', padding: '2rem'}}  onSubmit={this.getLocation}>
             <Form.Group>
                 <Form.Label><h1 style={{fontSize: '20px'}}>Enter a city: </h1></Form.Label>
-                <Form.Control style={{borderRadius: '10px 5%'}} type="text" placeholder='memphis, tn...' onChange={this.setQuery}/>
+                <Form.Control required type="text" placeholder='memphis, tn...' style={{borderRadius: '10px 5%'}} onChange={this.setQuery}/>
             </Form.Group><br/>
-            {/* <Form.Check type="switch" id="custom-switch" label="Check for Europe" onChange={this.handleSwitch}/> */}
-            <Button style={{margin: '0 100px'}} variant="primary" onClick={this.getLocation}>
+            <Button type='submit' style={{margin: '0 100px'}} variant="primary">
                 Search!
             </Button>
             </Form>
