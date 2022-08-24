@@ -32,6 +32,7 @@ export default class Map extends Component {
 
     const API = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_CITY_EXPLORER}&q=${this.state.query}&format=json`
 
+
     const response = await axios.get(API).catch((err)=>{alert(`${err}. Enter a valid location`)})
 
     this.setState({location: response.data})
@@ -42,6 +43,8 @@ export default class Map extends Component {
 
 
   }
+
+
 
   render() {
     return (
