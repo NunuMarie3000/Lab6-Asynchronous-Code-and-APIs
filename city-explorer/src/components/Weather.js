@@ -14,15 +14,12 @@ export default class Weather extends Component {
 
 	handleClose = () => {
 		this.setState({ show: false })
-		this.props.closeModalFromCards();
+		this.props.setWeatherFalse()
 	}
 
 	render() {
 		return (
 			<>
-				<button onClick={this.getForecast}>Click me</button>
-
-
 				<Modal show={this.props.isWeatherClicked} onHide={this.handleClose}>
 					<Modal.Header closeButton>
 						<Modal.Title>{this.props.title}</Modal.Title>

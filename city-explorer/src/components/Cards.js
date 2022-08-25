@@ -49,6 +49,10 @@ export default class Cards extends Component {
     this.setState({isClicked: false})
   }
 
+  setWeatherFalse = () => {
+    this.setState({isWeatherClicked: false})
+  }
+
   render() {
     return (
       <>
@@ -70,7 +74,7 @@ export default class Cards extends Component {
 
         <Static title={this.props.display_name} closeModalFromCards={this.closeModalFromCards} isClicked={this.state.isClicked} src={this.state.src} lat={this.props.lat} lon={this.props.lon}/>
 
-        <Weather isWeatherClicked={this.state.isWeatherClicked} weather={this.state.weather} city={this.props.display_name}/>
+        <Weather setWeatherFalse={this.setWeatherFalse} isWeatherClicked={this.state.isWeatherClicked} weather={this.state.weather} city={this.props.display_name}/>
       </>
     )
   }
