@@ -14,6 +14,7 @@ export default class Map extends Component {
       query: '',
       isChecked: false,
       location: '',
+      weather: '',
       //i need a state here that handles the chosen card specific info. when the user clicks cards.js, i need a function in cards.js that sends the info back here and sets the state to that specific object
       chosenCard: '',
       validated: false,
@@ -32,19 +33,13 @@ export default class Map extends Component {
 
     const API = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_CITY_EXPLORER}&q=${this.state.query}&format=json`
 
-
-    const response = await axios.get(API).catch((err)=>{alert(`${err}. Enter a valid location`)})
-
+    const response = await axios.get(API).catch((err)=>alert('Error: something went wrong', err))
     this.setState({location: response.data})
   }
 
   checkQuery = () => {
     this.state.query !== '' && this.setState({validated: true})
-
-
   }
-
-
 
   render() {
     return (
