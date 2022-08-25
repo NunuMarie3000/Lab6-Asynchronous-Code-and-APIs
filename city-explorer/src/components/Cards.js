@@ -39,10 +39,9 @@ export default class Cards extends Component {
 
   createWeather = async() => {
     // this will change when i deploy my server to heroku
-    const response = await axios.get(`http://localhost:5000/weather/?${this.props.city}&lat=${this.props.lat}&lon=${this.props.lon}`).catch((err)=>alert('Error: something went wrong', err))
-		console.log(response.data)
+    const response = await axios.get(`http://localhost:5000/weather/?lat=${this.props.lat}&lon=${this.props.lon}`).catch((err)=>alert('Error: something went wrong', err))
 
-		this.setState({ weather: response.data })
+		this.setState({ weather: response.data }, ()=>{console.log(this.state.weather)})
   }
 
   closeModalFromCards = () => {
@@ -74,7 +73,7 @@ export default class Cards extends Component {
 
         <Static title={this.props.display_name} closeModalFromCards={this.closeModalFromCards} isClicked={this.state.isClicked} src={this.state.src} lat={this.props.lat} lon={this.props.lon}/>
 
-        <Weather setWeatherFalse={this.setWeatherFalse} isWeatherClicked={this.state.isWeatherClicked} weather={this.state.weather} city={this.props.display_name}/>
+        {this.state.weather !== '' && <Weather setWeatherFalse={this.setWeatherFalse} isWeatherClicked={this.state.isWeatherClicked} weather={this.state.weather} city={this.props.display_name}/>}
       </>
     )
   }

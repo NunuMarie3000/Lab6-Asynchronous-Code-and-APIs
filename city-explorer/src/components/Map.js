@@ -34,7 +34,7 @@ export default class Map extends Component {
     const API = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_CITY_EXPLORER}&q=${this.state.query}&format=json`
 
     const response = await axios.get(API).catch((err)=>alert('Error: something went wrong', err))
-    this.setState({location: response.data})
+    this.setState({location: response.data[0]})
   }
 
   checkQuery = () => {
@@ -56,7 +56,7 @@ export default class Map extends Component {
             </Form>
 
             <div className='cards-container'>
-            {this.state.location !== '' && this.state.location.map(obj => <Cards key={obj.place_id} place_id={obj.place_id} icon={obj.icon} display_name={obj.display_name} lat={obj.lat} lon={obj.lon}/>)}
+              {this.state.location !== '' && <Cards place_id={this.state.location.place_id} icon={this.state.location.icon} display_name={this.state.location.display_name} lat={this.state.location.lat} lon={this.state.location.lon}/>}
             </div>
         </div>
       </>
