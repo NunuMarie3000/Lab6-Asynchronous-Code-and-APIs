@@ -23,15 +23,15 @@ export default class Static extends Component {
         <Modal.Header closeButton>
             <Modal.Title>{this.props.title}</Modal.Title>
         </Modal.Header>
-         <Modal.Body><img style={{width: '100%'}} alt='a map' src={this.props.src}/></Modal.Body>
+         <Modal.Body>
+         <img style={{width: '100%'}} alt='a map' src={this.props.src}/>
+         </Modal.Body>
         <Modal.Footer>
             <Button variant="secondary" onClick={this.handleClose}>
             Close
             </Button>
         </Modal.Footer>
         </Modal>
-        
-        {/* {this.props.isClicked && <Button onClick={this.createMap}>View Map</Button>} */}
 
         </>
     )

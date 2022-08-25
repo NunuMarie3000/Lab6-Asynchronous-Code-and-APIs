@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 
+import axios from 'axios'
+
 import { Card, Button } from 'react-bootstrap'
 
 import Static from './Static'
+
+import Weather from './Weather'
 
 export default class Cards extends Component {
   constructor(props) {
@@ -10,9 +14,9 @@ export default class Cards extends Component {
   
     this.state = {
       isClicked: false,
-      lat: this.props.lat,
-      lon: this.props.lon,
-      src: ''
+      isWeatherClicked: false,
+      src: '',
+      weather: '',
     }
   }
   //when the user clicks a card, i want a modal to show up with the location of that specific card
@@ -21,11 +25,24 @@ export default class Cards extends Component {
     this.setState({isClicked: true})
     this.createMap()
   }
+
+  handleWeatherButton = () => {
+    this.setState({isWeatherClicked: true})
+    this.createWeather()
+  }
   
   createMap = () => {
     const API = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_CITY_EXPLORER}&center=${this.props.lat},${this.props.lon}&zoom=16&size=480x480&markers=icon:small-blue-cutout|${this.props.lat},${this.props.lon}`
 
     this.setState({src: API})
+  }
+
+  createWeather = async() => {
+    // this will change when i deploy my server to heroku
+    const response = await axios.get(`http://localhost:5000/weather/?${this.props.city}&lat=${this.props.lat}&lon=${this.props.lon}`).catch((err)=>alert('Error: something went wrong', err))
+		console.log(response.data)
+
+		this.setState({ weather: response.data })
   }
 
   closeModalFromCards = () => {
@@ -44,11 +61,16 @@ export default class Cards extends Component {
                   Longitude: {this.props.lon}
               </Card.Text>
             </Card.Body>
-          <Card.Footer>{this.state.isClicked ? <Button style={{margin: '0 20px'}} variant='info' onClick={this.handleButton}>Map!</Button> : <Button style={{margin: '0 20px'}} variant='primary' onClick={this.handleButton}>View Map</Button>}<br/></Card.Footer>
+          <Card.Footer style={{display: 'flex', justifyContent: 'space-evenly'}}>
+            <Button style={{margin: '0 20px'}} variant='primary' onClick={this.handleButton}>Map</Button>
+            <Button style={{margin: '0 20px'}} variant='info' onClick={this.handleWeatherButton}>Weather</Button>
+            <br/></Card.Footer>
 
         </Card>
 
-        <Static title={this.props.display_name} closeModalFromCards={this.closeModalFromCards} isClicked={this.state.isClicked} src={this.state.src}/>
+        <Static title={this.props.display_name} closeModalFromCards={this.closeModalFromCards} isClicked={this.state.isClicked} src={this.state.src} lat={this.props.lat} lon={this.props.lon}/>
+
+        <Weather isWeatherClicked={this.state.isWeatherClicked} weather={this.state.weather} city={this.props.display_name}/>
       </>
     )
   }
