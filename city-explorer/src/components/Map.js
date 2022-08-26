@@ -12,13 +12,9 @@ export default class Map extends Component {
   
     this.state = {
       query: '',
-      isChecked: false,
       location: '',
       weather: '',
-      //i need a state here that handles the chosen card specific info. when the user clicks cards.js, i need a function in cards.js that sends the info back here and sets the state to that specific object
-      chosenCard: '',
       validated: false,
-      errors: []
     }
   }
 
@@ -56,7 +52,7 @@ export default class Map extends Component {
             </Form>
 
             <div className='cards-container'>
-              {this.state.location !== '' && <Cards place_id={this.state.location.place_id} icon={this.state.location.icon} display_name={this.state.location.display_name} lat={this.state.location.lat} lon={this.state.location.lon}/>}
+              {this.state.location !== '' && <Cards place_id={this.state.location.place_id} icon={this.state.location.icon} display_name={this.state.location.display_name} lat={this.state.location.lat} lon={this.state.location.lon} city={this.state.query}/>}
             </div>
         </div>
       </>

@@ -82,3 +82,13 @@ Start time: 9:30am
 Finish time: 11:49am
 
 Actual time needed to complete: approx. 2.5 hours
+
+6; Name of feature: Movies
+
+Estimate of time needed to complete: 3 hours
+
+Start time:
+
+Finish time:
+
+Actual time needed to complete: approx.
