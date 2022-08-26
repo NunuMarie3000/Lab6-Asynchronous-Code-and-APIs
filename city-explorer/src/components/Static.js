@@ -1,25 +1,25 @@
 import React, { Component } from 'react'
 
-import { Modal, Button } from 'react-bootstrap'
+// import { Modal, Button } from 'react-bootstrap'
 
 export default class Static extends Component {
-    constructor(props) {
-      super(props)
+    // constructor(props) {
+    //   super(props)
     
-      this.state = {
-        show: false,
-      }
-    }
+    //   this.state = {
+    //     show: false,
+    //   }
+    // }
 
-    handleClose = () =>{
-        this.setState({show: false})
-        this.props.closeModalFromCards();
-    }
+    // handleClose = () =>{
+    //     this.setState({show: false})
+    //     this.props.closeModalFromCards();
+    // }
 
     render() {
     return (
         <>
-        <Modal show={this.props.isClicked} onHide={this.handleClose}>
+        {/* <Modal show={this.props.isClicked} onHide={this.handleClose}>
         <Modal.Header closeButton>
             <Modal.Title>{this.props.title}</Modal.Title>
         </Modal.Header>
@@ -31,7 +31,12 @@ export default class Static extends Component {
             Close
             </Button>
         </Modal.Footer>
-        </Modal>
+        </Modal> */}
+
+        <div style={{display: 'flex', flexDirection:'column'}}>
+            {/* <h2>{this.props.title}</h2> */}
+            <img style={{height: '20rem', width: '18rem', borderRadius: '5%'}} alt='a map' src={this.props.src}/>
+        </div>
 
         </>
     )
