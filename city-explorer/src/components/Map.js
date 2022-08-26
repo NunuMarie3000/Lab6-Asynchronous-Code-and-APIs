@@ -32,7 +32,6 @@ export default class Map extends Component {
     const response = await axios.get(API).catch((err)=>alert('Error: something went wrong', err))
     this.setState({location: response.data[0]})
   }
-
   checkQuery = () => {
     this.state.query !== '' && this.setState({validated: true})
   }
@@ -46,9 +45,7 @@ export default class Map extends Component {
                 <Form.Label><h1 style={{fontSize: '20px'}}>Enter a city: </h1></Form.Label>
                 <Form.Control required type="text" placeholder='memphis, tn...' style={{borderRadius: '10px 5%'}} onChange={this.setQuery}/>
             </Form.Group><br/>
-            <Button type='submit' style={{margin: '0 100px'}} variant="primary">
-                Search!
-            </Button>
+            <Button type='submit' style={{margin: '0 100px'}} variant="primary">Search!</Button>
             </Form>
 
             <div className='cards-container'>
