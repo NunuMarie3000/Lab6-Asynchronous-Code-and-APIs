@@ -25,6 +25,7 @@ Technologies: React, LocalIQ API, React Router, Bootstrap, DotEnv
 8-19-2022 3:52pm -Form requires input to work
 8-29-2022 4:04pm - Alerts user of error if one occurs during axios request
 8-24-2022 10:41pm - Requests in place for created server, Weather component to render weather info we'll eventually get from our server. ACP changes
+8-25-2022 9:25am - Change from multiple results to one
 
 ## Credit and Collaborations
 
@@ -71,3 +72,13 @@ Start time: 10:03am-12:02pm,5:00pm-rough breaks
 Finish time: 10:36pm
 
 Actual time needed to complete: approx. 6 hours
+
+5; Name of feature: Weather(live)
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 9:30am
+
+Finish time: 11:49am
+
+Actual time needed to complete: approx. 2.5 hours
