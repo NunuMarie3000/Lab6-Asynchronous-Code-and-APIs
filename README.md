@@ -26,6 +26,7 @@ Technologies: React, LocalIQ API, React Router, Bootstrap, DotEnv
 8-29-2022 4:04pm - Alerts user of error if one occurs during axios request
 8-24-2022 10:41pm - Requests in place for created server, Weather component to render weather info we'll eventually get from our server. ACP changes
 8-25-2022 9:25am - Change from multiple results to one
+8-26-2022 9:55pm - Server deployed to Heroku, layout change, added movies pertaining to city search
 
 ## Credit and Collaborations
 
@@ -87,8 +88,18 @@ Actual time needed to complete: approx. 2.5 hours
 
 Estimate of time needed to complete: 3 hours
 
-Start time:
+Start time: 10:00am
 
-Finish time:
+Finish time: 5:30pm
 
-Actual time needed to complete: approx.
+Actual time needed to complete: approx. 4 hours
+
+7; Name of feature: Publish
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 6:45
+
+Finish time: 9:50pm
+
+Actual time needed to complete: approx. 3 hours
