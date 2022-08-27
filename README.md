@@ -1,7 +1,7 @@
 # Lab6-Asynchronous-Code-and-APIs
 
 **Author**: Storm O'Bryant
-**Version**: 1.0.3
+**Version**: 1.0.5
 [View deployed application](https://cityexplorer-lab06.netlify.app/)
 
 ## Overview
@@ -10,7 +10,6 @@
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 1; Read the documentation on LocationIQ's website to understand how the API operates
-2; 
 
 ## Architecture
 
