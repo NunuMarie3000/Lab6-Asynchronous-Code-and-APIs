@@ -12,7 +12,7 @@ h1{
   text-align: center;
   margin: 4rem;
 }
-
+/* need something random for testing */
 .mapjs-container{
   display: flex;
   flex-direction: column;
