@@ -20,6 +20,7 @@ export default class Map extends Component {
 
   setQuery = (e) =>{
     this.setState({query: e.target.value})
+    // this.state.query !== '' && window.location.reload()
   }
 
   getLocation = async (e) =>{
@@ -45,11 +46,11 @@ export default class Map extends Component {
                 <Form.Label><h1 style={{fontSize: '20px'}}>Enter a city: </h1></Form.Label>
                 <Form.Control required type="text" placeholder='memphis, tn...' style={{borderRadius: '10px 5%'}} onChange={this.setQuery}/>
             </Form.Group><br/>
-            <Button type='submit' style={{margin: '0 100px'}} variant="primary">Search!</Button>
+            <Button type='submit' variant="primary">Search!</Button>
             </Form>
 
             <div className='cards-container'>
-              {this.state.location !== '' && <Cards place_id={this.state.location.place_id} icon={this.state.location.icon} display_name={this.state.location.display_name} lat={this.state.location.lat} lon={this.state.location.lon} city={this.state.query}/>}
+              {this.state.location !== '' && <Cards icon={this.state.location.icon} display_name={this.state.location.display_name} lat={this.state.location.lat} lon={this.state.location.lon} city={this.state.query}/>}
             </div>
         </div>
       </>

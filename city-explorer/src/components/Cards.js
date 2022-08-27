@@ -12,25 +12,12 @@ export default class Cards extends Component {
     super(props)
 
     this.state = {
-      // isClicked: false,
-      // isWeatherClicked: false,
-      // isMoviesClicked: false,
       src: '',
-      data: '',
+      // data: '',
+      weather: '',
+      movies: '',
     }
   }
-  //when the user clicks a card, i want a modal to show up with the location of that specific card
-  // handleButton = () => {
-  //   this.setState({ isClicked: true })
-  //   this.createMap()
-  // }
-  // handleWeatherButton = () => {
-  //   this.setState({ isWeatherClicked: true })
-  //   this.createWeather()
-  // }
-  // handleMovies = () => {
-  //   this.setState({ isMoviesClicked: true })
-  // }
 
   componentDidMount = () => {
     this.createMap()
@@ -43,44 +30,40 @@ export default class Cards extends Component {
     this.setState({ src: map })
   }
   createWeather = async () => {
-    const endpoints = [
-      `http://localhost:5000/weather/?lat=${this.props.lat}&lon=${this.props.lon}`,
-      `http://localhost:5000/movie/?city=${this.props.city}`
-    ]
+    // const endpoints = [
+    //   `${process.env.REACT_APP_URL}weather/?lat=${this.props.lat}&lon=${this.props.lon}`,
+    //   `${process.env.REACT_APP_URL}movie/?city=${this.props.city}`
+      
+    // ]
     //axios.all() so i can make both requests concurrently/at the same time, and store all data in state
-    await axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then(
-      (data) => this.setState({data})).catch((err)=> alert('There seems to be an error, try again', err));
-  }
+    // await axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then(
+    //   (data) => this.setState({data})).catch((err)=> console.log('There seems to be an error, try again', err));
 
-  // closeModalFromCards = () => {
-  //   this.setState({ isClicked: false })
-  // }
-  // setWeatherFalse = () => {
-  //   this.setState({ isWeatherClicked: false })
-  // }
-  // setMovieFalse = () => {
-  //   this.setState({ isMoviesClicked: false })
-  // }
+    const forecast = await axios.get(`${process.env.REACT_APP_URL}weather/?lat=${this.props.lat}&lon=${this.props.lon}`).catch((err)=>console.log('error with weather', err))
+    this.setState({weather: forecast})
+
+    const film = await axios.get(`${process.env.REACT_APP_URL}movie/?city=${this.props.city}`).catch((err)=>console.log('error with films', err))
+    this.setState({movies: film})
+  }
 
   render() {
     return (
-      <>
-        <Card>
+        <Card style={{display: 'flex', flexDirection: 'column', alignItems: 'center', borderRadius: '5%'}}>
           <Card.Header>Latitude: {this.props.lat} <img style={{ width: '1rem' }} src={this.props.icon ? this.props.icon : 'https://locationiq.org/static/images/mapicons/poi_boundary_administrative.p.20.png'} alt='icon' /> Longitude: {this.props.lon}</Card.Header>
           <Card.Body>
             <Card.Title>{this.props.display_name}</Card.Title>
-            <div style={{display: 'flex', }}>{/*map and forecast info */}
+
+            <div className='map-and-forecast'>{/*map and forecast info */}
               <Static title={this.props.display_name} closeModalFromCards={this.closeModalFromCards} isClicked={this.state.isClicked} src={this.state.src} lat={this.props.lat} lon={this.props.lon} />
 
-              {this.state.data !== '' && <Weather weather={this.state.data[0].data} city={this.props.city} />}
+              {this.state.weather !== '' && <Weather weather={this.state.weather.data} city={this.props.city} />}
             </div>
 
-            <div>{/*movies, maybe a carousel? */}
-              {this.state.data !== '' && <Movies city={this.props.city} movies={this.state.data[1].data}/>}
+            <div className='movies-container'>{/*movies, maybe a carousel? */}
+              {this.state.movies !== '' && <Movies city={this.props.city} movies={this.state.movies.data}/>}
             </div>
           </Card.Body>
         </Card>
-      </>
     )
   }
 }

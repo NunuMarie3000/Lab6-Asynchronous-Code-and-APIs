@@ -10,14 +10,59 @@ h1{
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 4rem 4rem 0 4rem;
+  /* padding: 4rem; */
+  margin: 4rem;
+  border-radius: 2rem/3rem;
 }
 
 .mapjs-container{
   display: flex;
   flex-direction: column;
 }
+.map-and-forecast{
+  display: flex;
+  padding-bottom: 2rem;
+  gap: 4rem;
+  align-items: center;
+}
+.weather-container{
+  display: 'flex';
+  flex-direction: column;
+}
 
-.cards-container{
-  /* padding: 10px 60px; */
+.poster{
+  width: 18rem;
+  height: 20rem; 
+  padding-top: 1rem;
+}
+.movies-container{
+  width: 40rem;
+  margin: auto;
+}
+
+@media only screen and (max-width: 768px){
+  .map-and-forecast{
+    flex-direction: column;
+  }
+  .application-container{
+    padding: 2rem
+  }
+  .movies-container{
+    width: auto;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .application-container{
+    /* padding: 4rem; */
+    margin: 5px;
+  }
+  .movies-container{
+    width: 18rem;
+  }
+  .weather-container{
+    width: 18rem;
+  }
+  .fa-solid{
+    font-size: 2rem;
+  }
 }

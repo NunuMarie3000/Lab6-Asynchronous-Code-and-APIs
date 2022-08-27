@@ -18,27 +18,10 @@ export default class Static extends Component {
 
     render() {
     return (
-        <>
-        {/* <Modal show={this.props.isClicked} onHide={this.handleClose}>
-        <Modal.Header closeButton>
-            <Modal.Title>{this.props.title}</Modal.Title>
-        </Modal.Header>
-         <Modal.Body>
-         <img style={{width: '100%'}} alt='a map' src={this.props.src}/>
-         </Modal.Body>
-        <Modal.Footer>
-            <Button variant="secondary" onClick={this.handleClose}>
-            Close
-            </Button>
-        </Modal.Footer>
-        </Modal> */}
-
-        <div style={{display: 'flex', flexDirection:'column'}}>
-            {/* <h2>{this.props.title}</h2> */}
-            <img style={{height: '20rem', width: '18rem', borderRadius: '5%'}} alt='a map' src={this.props.src}/>
+        <div style={{display: 'flex', flexDirection:'column', paddingBottom: '2rem'}}>
+            <h5>Map for {this.props.title.charAt(0).toUpperCase() + this.props.title.slice(1)}</h5>
+            <img style={{height: '20rem', width: '18rem', borderRadius: '5%', margin: 'auto'}} alt='a map' src={this.props.src}/>
         </div>
-
-        </>
     )
     }
 }
