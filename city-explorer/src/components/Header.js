@@ -12,7 +12,7 @@ export default class Header extends Component {
   render() {
     return (
       <>
-        <Nav className='justify-content-end' style={{paddingRight: '2rem'}}>
+        <Nav className='justify-content-end' style={{paddingRight: '1rem'}}>
             <LinkContainer to='/'>
                 <NavLink>Home</NavLink>
             </LinkContainer>
@@ -22,7 +22,6 @@ export default class Header extends Component {
         </Nav>
         <h1 style={{fontSize: '54px'}}>City Explorer</h1>
         <h3 style={{fontSize: '36px'}}>by Stormy</h3>
-        {/* <h3>powered by <img style={{width: '100px'}} alt='LocationIQ Logo' src={locationIQ}/></h3> */}
         <Outlet/>
         
       </>

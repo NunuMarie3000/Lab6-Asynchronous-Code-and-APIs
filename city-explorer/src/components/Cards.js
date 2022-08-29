@@ -45,9 +45,6 @@ export default class Cards extends Component {
     return (
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
           backgroundColor: 'rgba(255, 255, 255, 0)'
         }}
       >

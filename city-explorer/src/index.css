@@ -1,7 +1,9 @@
 body{
-  /* background-color: rgb(255, 211, 219); */
   background-color: #769597;
-  /* background-color: #914236; */
+}
+footer{
+  font-family: 'Caveat', cursive;
+  font-size: 22px;
 }
 .nav-link{
   color: #914236;
@@ -11,39 +13,33 @@ body{
 .nav-link:hover{
   color: #00565F;
 }
+a{ 
+  color: #914236;
+  text-decoration: none;
+}
+a:hover{
+  color: #00565F;
+}
 
 h1,h3{
   font-family: 'Caveat', cursive;
 }
 
 .application-container{
-  display: flex;
-  flex-direction: column;
   text-align: center;
   margin: 4rem;
-  padding: 0 4rem;
+  padding: 0 2rem;
 }
 .mapjs-container{
   display: flex;
   flex-direction: column;
 }
 .map{
-  height: 30rem; 
-  width: 24rem; 
+  height: 36rem; 
+  width: 30rem; 
   border-radius: 5%;
-  margin: auto
-}
-
-.map-and-forecast{
-  display: flex;
-  flex-direction: column;
-  /* padding-bottom: 2rem; */
-  /* gap: 4rem; */
-  align-items: center;
-}
-.weather-container{
-  display: 'flex';
-  flex-direction: column;
+  margin: auto;
+  border: 5px solid #00565F;
 }
 
 .poster{
@@ -52,14 +48,17 @@ h1,h3{
   padding-top: 1rem;
 }
 .movies-container{
-  width: 40rem;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+}
+.carousel{
+  width: 36rem;
 }
 
 @media only screen and (max-width: 768px){
-  .map-and-forecast{
-    flex-direction: column;
-  }
   .application-container{
     padding: 2rem
   }
@@ -69,7 +68,6 @@ h1,h3{
 }
 @media only screen and (max-width: 600px) {
   .application-container{
-    /* padding: 4rem; */
     margin: 5px;
   }
   .map{
@@ -88,5 +86,8 @@ h1,h3{
   }
   .fa-solid{
     font-size: 2rem;
+  }
+  .carousel{
+    width: 18rem;
   }
 }

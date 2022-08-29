@@ -47,9 +47,9 @@ export default class Map extends Component {
           <Form validated={this.state.validated} style={{ display: 'flex', flexDirection: 'column', padding: '2rem' }} onSubmit={this.getLocation}>
             {this.state.validated !== true && <Form.Group>
               <Form.Label><h1 style={{ fontSize: '36px' }}>Enter a city: </h1></Form.Label>
-              <Form.Control required type="text" placeholder='memphis, tn...' style={{ borderRadius: '10px 5%' }} onChange={this.setQuery} />
+              <Form.Control required type="text" placeholder='Memphis...' style={{ borderRadius: '10px 5%' }} onChange={this.setQuery} />
             </Form.Group>}<br />
-            {this.state.validated !== true ? <Button type='submit' variant="primary">Search!</Button> : <Button onClick={this.newSearch} variant="info">New Search!</Button>}
+            {this.state.validated !== true ? <Button style={{fontFamily: 'Caveat, cursive'}} type='submit' variant="primary">Explore!</Button> : <Button style={{fontFamily: 'Caveat, cursive'}} onClick={this.newSearch} variant="info">New Search!</Button>}
           </Form>
 
           <div className='cards-container'>
