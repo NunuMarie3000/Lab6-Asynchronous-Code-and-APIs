@@ -1,9 +1,19 @@
 body{
-  background-color: rgb(255, 211, 219);
+  /* background-color: rgb(255, 211, 219); */
+  background-color: #769597;
+  /* background-color: #914236; */
+}
+.nav-link{
+  color: #914236;
+  font-family: 'Caveat', cursive;
+  font-size: 24px;
+}
+.nav-link:hover{
+  color: #00565F;
 }
 
-h1{
-  font-family: 'DynaPuff', cursive;
+h1,h3{
+  font-family: 'Caveat', cursive;
 }
 
 .application-container{
@@ -11,16 +21,24 @@ h1{
   flex-direction: column;
   text-align: center;
   margin: 4rem;
+  padding: 0 4rem;
 }
-/* need something random for testing */
 .mapjs-container{
   display: flex;
   flex-direction: column;
 }
+.map{
+  height: 30rem; 
+  width: 24rem; 
+  border-radius: 5%;
+  margin: auto
+}
+
 .map-and-forecast{
   display: flex;
-  padding-bottom: 2rem;
-  gap: 4rem;
+  flex-direction: column;
+  /* padding-bottom: 2rem; */
+  /* gap: 4rem; */
   align-items: center;
 }
 .weather-container{
@@ -54,8 +72,16 @@ h1{
     /* padding: 4rem; */
     margin: 5px;
   }
+  .map{
+    height: 20rem; 
+    width: 16rem;
+  }
   .movies-container{
     width: 18rem;
+  }
+  .poster{
+    width: 12rem;
+    height: 14rem; 
   }
   .weather-container{
     width: 18rem;
