@@ -12,7 +12,7 @@ export default class Weather extends Component {
 					<h5>Weather information for {this.props.city.charAt(0).toUpperCase() + this.props.city.slice(1)}</h5>
 					<Card>
 						<CardHeader>Date & Time: <br/>{this.props.weather.date}</CardHeader>
-						<Card.Body>
+						<Card.Body style={{backgroundColor: 'rgb(255, 160, 104)'}}>
 							{this.props.weather.description}
 							<div style={{padding: '2rem 0', display:'flex', alignItems: 'center', justifyContent: 'space-evenly'}}>
 							{icons.map(icon => <i className={icon}></i>)}

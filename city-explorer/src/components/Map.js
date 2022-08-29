@@ -20,7 +20,6 @@ export default class Map extends Component {
 
   setQuery = (e) => {
     this.setState({ query: e.target.value })
-    // this.state.query !== '' && window.location.reload()
   }
 
   getLocation = async (e) => {
@@ -36,17 +35,21 @@ export default class Map extends Component {
   checkQuery = () => {
     this.state.query !== '' && this.setState({ validated: true })
   }
+  newSearch = () => {
+    this.setState({validated: false})
+    window.location.reload()
+  }
 
   render() {
     return (
       <>
         <div className='mapjs-container'>
           <Form validated={this.state.validated} style={{ display: 'flex', flexDirection: 'column', padding: '2rem' }} onSubmit={this.getLocation}>
-            <Form.Group>
-              <Form.Label><h1 style={{ fontSize: '20px' }}>Enter a city: </h1></Form.Label>
+            {this.state.validated !== true && <Form.Group>
+              <Form.Label><h1 style={{ fontSize: '36px' }}>Enter a city: </h1></Form.Label>
               <Form.Control required type="text" placeholder='memphis, tn...' style={{ borderRadius: '10px 5%' }} onChange={this.setQuery} />
-            </Form.Group><br />
-            <Button type='submit' variant="primary">Search!</Button>
+            </Form.Group>}<br />
+            {this.state.validated !== true ? <Button type='submit' variant="primary">Search!</Button> : <Button onClick={this.newSearch} variant="info">New Search!</Button>}
           </Form>
 
           <div className='cards-container'>

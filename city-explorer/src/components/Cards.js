@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-import { Card } from "react-bootstrap";
+// import { Card } from "react-bootstrap";
 
 import Static from "./Static";
 import Weather from "./Weather";
@@ -43,16 +43,16 @@ export default class Cards extends Component {
 
   render() {
     return (
-      <Card
+      <div
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          borderRadius: "5%",
+          backgroundColor: 'rgba(255, 255, 255, 0)'
         }}
       >
-        <Card.Header>
-          Latitude: {this.props.lat}{" "}
+        <div>
+          <h3>Latitude: {this.props.lat}</h3>{" "}
           <img
             style={{ width: "1rem" }}
             src={
@@ -62,38 +62,24 @@ export default class Cards extends Component {
             }
             alt="icon"
           />{" "}
-          Longitude: {this.props.lon}
-        </Card.Header>
-        <Card.Body>
-          <Card.Title>{this.props.display_name}</Card.Title>
+          <h3>Longitude: {this.props.lon}</h3>
+        </div>
+        <div>
+          <h1>{this.props.display_name}</h1>
 
           <div className="map-and-forecast">
             {/*map and forecast info */}
-            <Static
-              title={this.props.display_name}
-              closeModalFromCards={this.closeModalFromCards}
-              isClicked={this.state.isClicked}
-              src={this.state.src}
-              lat={this.props.lat}
-              lon={this.props.lon}
-            />
+            <Static title={this.props.display_name} src={this.state.src} lat={this.props.lat} lon={this.props.lon}/>
 
-            {this.state.data !== "" && (
-              <Weather
-                weather={this.state.data[0].data}
-                city={this.props.city}
-              />
-            )}
+            {this.state.data !== "" && <Weather weather={this.state.data[0].data} city={this.props.city}/>}
           </div>
 
           <div className="movies-container">
             {/*movies, maybe a carousel? */}
-            {this.state.data !== "" && (
-              <Movies city={this.props.city} movies={this.state.data[1].data} />
-            )}
+            {this.state.data !== "" && <Movies city={this.props.city} movies={this.state.data[1].data} />}
           </div>
-        </Card.Body>
-      </Card>
+        </div>
+      </div>
     );
   }
 }

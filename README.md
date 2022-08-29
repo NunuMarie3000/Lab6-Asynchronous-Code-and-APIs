@@ -33,7 +33,7 @@ Technologies: React, LocalIQ API, React Router, Bootstrap, DotEnv
 
 ### Time Estimates
 
-1; Name of feature:  Locations: As a user of City Explorer, I want to enter the name of a location so that I can see the exact latitude and longitude of that location.
+1.Name of feature:  Locations: As a user of City Explorer, I want to enter the name of a location so that I can see the exact latitude and longitude of that location.
 
 Estimate of time needed to complete: **15min**_
 
@@ -43,7 +43,7 @@ Finish time: **11:46**_
 
 Actual time needed to complete: **approx. 2.5 hours**_
 
-2; Name of feature:  Map: As a user, I want to see a map of the city so that I can see the layout of the area I want to explore.
+2.Name of feature:  Map: As a user, I want to see a map of the city so that I can see the layout of the area I want to explore.
 
 Estimate of time needed to complete: **2 hours**_
 
@@ -53,7 +53,7 @@ Finish time: **11:18**_
 
 Actual time needed to complete: **approx. 1.5 hours**_
 
-3; Name of feature:  Errors: As a user, I want clear messages if something goes wrong so I know if I need to make any changes or try again in a different manner.
+3.Name of feature:  Errors: As a user, I want clear messages if something goes wrong so I know if I need to make any changes or try again in a different manner.
 
 Estimate of time needed to complete: **2 hours**_
 
@@ -63,7 +63,7 @@ Finish time: **4:04pm**_
 
 Actual time needed to complete: **12 minutes**_
 
-4; Name of feature: Weather(placeholder)
+4.Name of feature: Weather(placeholder)
 
 Estimate of time needed to complete: 3 hours
 
@@ -73,7 +73,7 @@ Finish time: 10:36pm
 
 Actual time needed to complete: approx. 6 hours
 
-5; Name of feature: Weather(live)
+5.Name of feature: Weather(live)
 
 Estimate of time needed to complete: 3 hours
 
@@ -83,7 +83,7 @@ Finish time: 11:49am
 
 Actual time needed to complete: approx. 2.5 hours
 
-6; Name of feature: Movies
+6.Name of feature: Movies
 
 Estimate of time needed to complete: 3 hours
 
@@ -93,7 +93,7 @@ Finish time: 5:30pm
 
 Actual time needed to complete: approx. 4 hours
 
-7; Name of feature: Publish
+7.Name of feature: Publish
 
 Estimate of time needed to complete: 3 hours
 
@@ -102,3 +102,13 @@ Start time: 6:45
 Finish time: 9:50pm
 
 Actual time needed to complete: approx. 3 hours
+
+8.Name of feature: Refactor: Componentize the front-end codebase.
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 9:30am
+
+Finish time: 10:06am
+
+Actual time needed to complete: approx. 30min
