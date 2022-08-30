@@ -11,7 +11,7 @@ export default class Weather extends Component {
 				<div className='weather-container'>
 					<h5 style={{fontFamily: 'Caveat, cursive', fontSize: '36px'}}><i className='fa-solid fa-temperature-three-quarters'></i> Seven Day Forecast for {this.props.city.charAt(0).toUpperCase() + this.props.city.slice(1)} <i className='fa-solid fa-temperature-three-quarters'></i></h5>
 					<div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap:'1rem'}}>
-						{this.props.weather.map(day => <Card style={{width: '16rem'}}>
+						{this.props.weather.map(day => <Card style={{width: '16rem', border:'5px solid #00565F'}}>
 							<CardHeader style={{fontFamily: 'Caveat, cursive', fontSize: '24px'}}>Date: {day.date}</CardHeader>
 							<Card.Body style={{backgroundColor: 'rgb(255, 160, 104)'}}>
 								{day.description}

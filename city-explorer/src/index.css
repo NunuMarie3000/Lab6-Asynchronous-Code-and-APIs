@@ -56,6 +56,7 @@ h1,h3{
 }
 .carousel{
   width: 36rem;
+  border: 5px solid #00565F;
 }
 
 @media only screen and (max-width: 768px){
