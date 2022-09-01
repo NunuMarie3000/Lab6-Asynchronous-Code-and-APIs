@@ -14,7 +14,7 @@
 ## Architecture
 
 Application Design: [insert app design here]
-Technologies: React, LocalIQ API, React Router, Bootstrap, DotEnv
+Technologies: React, LocalIQ API, React Router, Bootstrap, DotEnv, theMovieDB
 
 ## Change Log
 
@@ -26,6 +26,8 @@ Technologies: React, LocalIQ API, React Router, Bootstrap, DotEnv
 8-24-2022 10:41pm - Requests in place for created server, Weather component to render weather info we'll eventually get from our server. ACP changes
 8-25-2022 9:25am - Change from multiple results to one
 8-26-2022 9:55pm - Server deployed to Heroku, layout change, added movies pertaining to city search
+8-27-2022 4:28pm -Changes to layout, color scheme, added 7 day forecast
+8-31-2022 7:41pm - added yelp food places, not super cute, but functional
 
 ## Credit and Collaborations
 
@@ -112,3 +114,13 @@ Start time: 9:30am
 Finish time: 10:06am
 
 Actual time needed to complete: approx. 30min
+
+8.Name of feature: STRETCH: As a user of City Explorer, I want to see info about restaurants in the city I searched, so that I find the best places to eat.
+
+Estimate of time needed to complete: 1 hour
+
+Start time:
+
+Finish time:
+
+Actual time needed to complete:
