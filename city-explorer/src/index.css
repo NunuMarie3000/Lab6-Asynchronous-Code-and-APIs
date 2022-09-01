@@ -76,6 +76,10 @@ h1,h3{
 .yelp{
   margin-top: 2rem;
 }
+.yelp-img{
+  width: 12rem;
+  height: 12rem;
+}
 
 @media only screen and (max-width: 768px){
   .application-container{
@@ -108,5 +112,13 @@ h1,h3{
   }
   .carousel{
     width: 18rem;
+  }
+  .yelp-container{
+    width: 18rem;
+    height: 18rem;
+  }
+  .yelp-img{
+    width: 6rem;
+    height: 6rem;
   }
 }

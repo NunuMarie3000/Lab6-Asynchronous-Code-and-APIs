@@ -10,7 +10,7 @@ export default class Yelp extends Component {
           {this.props.food.map((obj) => <Card key={obj.id} style={{border: '5px solid #00565F'}}>
             <Card.Body style={{ display: 'flex', justifyContent: 'space-between' }}>
               <div>
-                <Card.Img alt={obj.name} src={obj.image} style={{ width: '12rem', height: '12rem' }} />
+                <Card.Img alt={obj.name} src={obj.image} className='yelp-img' />
               </div>
               <div style={{paddingRight:'2rem'}}>
                 <Card.Title>{obj.name}</Card.Title>

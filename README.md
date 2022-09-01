@@ -32,6 +32,9 @@ Technologies: React, LocalIQ API, React Router, Bootstrap, DotEnv, theMovieDB
 ## Credit and Collaborations
 
 [LocationIQ](https://locationiq.com/docs)
+[WeatherbitIO](https://www.weatherbit.io/)
+[TheMovieDB](https://www.themoviedb.org/)
+[YelpFusion](https://www.yelp.com/developers/documentation/v3/get_started)
 
 ### Time Estimates
 
