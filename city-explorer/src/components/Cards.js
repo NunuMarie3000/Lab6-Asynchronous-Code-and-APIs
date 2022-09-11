@@ -34,7 +34,7 @@ export default class Cards extends Component {
     // axios.all() so i can make both requests concurrently/at the same time, and store all data in state
     await axios
       .all(endpoints.map((endpoint) => axios.get(endpoint)))
-      .then((data) => this.setState({ data },()=>console.log(this.state.data[2].data)))
+      .then((data) => this.setState({ data }))
       .catch((err) =>
         console.log("There seems to be an error, try again", err)
       );

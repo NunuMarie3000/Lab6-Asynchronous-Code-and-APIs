@@ -66,7 +66,6 @@ h1,h3{
   display: flex;
   flex-direction: column;
   gap: 10px;
-  align-items: stretch;
   margin: 0 auto;
   padding: 1rem;
 }
@@ -79,6 +78,12 @@ h1,h3{
 .yelp-img{
   width: 12rem;
   height: 12rem;
+}
+.yelp-img-container{
+  display: flex;
+}
+.yelp-container > .card .card-text:last-child{
+  font-size: 24px;
 }
 
 @media only screen and (max-width: 768px){
@@ -118,7 +123,21 @@ h1,h3{
     height: 18rem;
   }
   .yelp-img{
-    width: 6rem;
+    width: 5rem;
     height: 6rem;
+  }
+  .yelp-img-container{
+    align-items: center;
+  }
+  .fa-phone,
+  .fa-location-dot,
+  .fa-star{
+    font-size: 10px;
+  }
+  .yelp-container > .card .card-text:last-child{
+    font-size: 14px;
+  }
+  .yelp-container > .card .card-title{
+    font-size: 18px;
   }
 }
