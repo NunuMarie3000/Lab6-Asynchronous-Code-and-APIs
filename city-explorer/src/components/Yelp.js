@@ -14,8 +14,8 @@ export default class Yelp extends Component {
               </div>
               <div style={{textAlign:'left', marginLeft:'1rem'}}>
                 <Card.Title>{obj.name}</Card.Title>
-                <Card.Text><i class="fa-solid fa-star"></i>: {obj.rating}/5<br/>
-                <i class="fa-solid fa-location-dot"></i> {obj.location.display_address[0]}<br/>
+                <Card.Text><i className="fa-solid fa-star"></i>: {obj.rating}/5<br/>
+                <i className="fa-solid fa-location-dot"></i> {obj.location.display_address[0]}<br/>
                 {obj.location.display_address[1]}<br />
                 <i className="fa-solid fa-phone"></i>{obj.phone}</Card.Text>
               </div>

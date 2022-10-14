@@ -28,7 +28,7 @@ export default class Cards extends Component {
   };
   createWeather = async () => {
     const endpoints = [
-      `${process.env.REACT_APP_URL}weather/?lat=${this.props.lat}&lon=${this.props.lon}`,
+      // `${process.env.REACT_APP_URL}weather/?lat=${this.props.lat}&lon=${this.props.lon}`,
       `${process.env.REACT_APP_URL}movie/?city=${this.props.city}`,`${process.env.REACT_APP_URL}yelp/?city=${this.props.city}`
     ];
     // axios.all() so i can make both requests concurrently/at the same time, and store all data in state
@@ -67,17 +67,19 @@ export default class Cards extends Component {
             {/*map and forecast info */}
             <Static title={this.props.display_name} src={this.state.src} lat={this.props.lat} lon={this.props.lon}/>
 
-            {this.state.data !== "" && <Weather weather={this.state.data[0].data} city={this.props.city}/>}
+            {/* {this.state.data !== "" && <Weather weather={this.state.data[0].data} city={this.props.city}/>} */}
           </div>
             
           <div className="yelp">
 
-          {this.state.data !== "" && <Yelp city={this.props.city} food={this.state.data[2].data}/>}
+          {this.state.data !== "" && <Yelp city={this.props.city} food={this.state.data[1].data}/>}
+          {/* {this.state.data !== "" && <Yelp city={this.props.city} food={this.state.data[2].data}/>} */}
           </div>
 
           <div className="movies-container">
             {/*movies, maybe a carousel? */}
-            {this.state.data !== "" && <Movies city={this.props.city} movies={this.state.data[1].data} />}
+            {this.state.data !== "" && <Movies city={this.props.city} movies={this.state.data[0].data} />}
+            {/* {this.state.data !== "" && <Movies city={this.props.city} movies={this.state.data[1].data} />} */}
           </div>
         </div>
       </div>
