@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import Static from "./Static";
-import Weather from "./Weather";
+// import Weather from "./Weather";
 import Yelp from "./Yelp";
 import Movies from "./Movies";
 
