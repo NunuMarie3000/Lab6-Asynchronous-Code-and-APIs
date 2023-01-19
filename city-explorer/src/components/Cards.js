@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import Static from "./Static";
-// import Weather from "./Weather";
+import Weather from "./Weather";
 import Yelp from "./Yelp";
 import Movies from "./Movies";
 
@@ -67,7 +67,7 @@ export default class Cards extends Component {
             {/*map and forecast info */}
             <Static title={this.props.display_name} src={this.state.src} lat={this.props.lat} lon={this.props.lon}/>
 
-            {/* {this.state.data !== "" && <Weather weather={this.state.data[0].data} city={this.props.city}/>} */}
+            {this.state.data !== "" && <Weather weather={this.state.data[0].data} city={this.props.city}/>}
           </div>
             
           <div className="yelp">
